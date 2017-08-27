@@ -1,8 +1,16 @@
-#include <stdlib.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsavry <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/26 17:39:15 by nsavry            #+#    #+#             */
+/*   Updated: 2017/08/26 18:45:23 by nsavry           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
-#include "libft.h"
-#include <stdio.h>
 
 static void	ft_join(char **str, char *buf)
 {
@@ -49,12 +57,11 @@ int			get_next_line(int const fd, char **line)
 				return (ft_dup(line, &str, i));
 		}
 		ret = read(fd, buf, BUFF_SIZE);
-		if (ret == 0 && str != NULL && str[0] == 0)
-			return (0);
 		if (ret == -1)
 			return (-1);
+		if (ret == 0 && str != NULL && str[0] == 0)
+			return (0);
 		buf[ret] = 0;
 		ft_join(&str, buf);
-		//printf("str:%s\n", str);		
 	}
 }

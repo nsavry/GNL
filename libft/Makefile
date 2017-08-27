@@ -6,13 +6,14 @@
 #    By: nsavry <nsavry@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 17:46:29 by nsavry            #+#    #+#              #
-#    Updated: 2015/08/12 18:10:14 by nsavry           ###   ########.fr        #
+#    Updated: 2017/08/27 15:28:43 by nsavry           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 FTC = ft_atoi.c\
+	  ft_strndup.c\
 	  ft_bzero.c\
 	  ft_isalnum.c\
 	  ft_tabdup.c\
@@ -81,7 +82,10 @@ FTC = ft_atoi.c\
 	  ft_put_str_tab.c\
 	  ft_str_tab_dup.c\
 	  ft_strsubin.c\
-	  ft_strndup.c
+	  ft_free_tab.c\
+	  ft_free.c\
+	  ft_add_strtab.c\
+	  ft_remove_index_strtab.c\
 
 FTO = $(subst .c,.o,$(FTC))
 

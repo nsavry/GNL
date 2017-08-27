@@ -1,13 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsavry <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/27 15:30:35 by nsavry            #+#    #+#             */
+/*   Updated: 2017/08/27 15:37:39 by nsavry           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "get_next_line.h"
-
-int		get_next_line(const int fd, char **line);
 
 int		main(void)
 {
 	char	*line;
 
 	while (get_next_line(0, &line) != 0)
-		printf("%s\n",  line);
+		printf("%s\n", line);
 	return (0);
 }

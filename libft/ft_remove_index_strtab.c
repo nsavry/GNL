@@ -6,45 +6,33 @@
 /*   By: nsavry <nsavry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:58:24 by nsavry            #+#    #+#             */
-/*   Updated: 2016/04/12 19:28:50 by nsavry           ###   ########.fr       */
+/*   Updated: 2014/04/26 14:06:14 by nsavry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-static int	ft_solve_atoi(const char *str, int nb, int i)
+char	**ft_remove_index_strtab(char **otab, int index)
 {
-	while ((str[i] != 0) && (str[i] <= '9') && (str[i] >= '0'))
-	{
-		nb = nb * 10;
-		nb = nb + (str[i] - 48);
-		i++;
-	}
-	return (nb);
-}
-
-int			ft_atoi(const char *str)
-{
-	int		nb;
+	char	**tab;
 	int		i;
-	int		a;
 
-	nb = 0;
 	i = 0;
-	a = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == '\r')
+	while (otab[i] != NULL)
 		i++;
-	if (str[i] == '-')
+	tab = malloc(sizeof(char *) * i);
+	i = 0;
+	while (i < index)
 	{
+		tab[i] = ft_strdup(otab[i]);
 		i++;
-		a = -1;
 	}
-	else if (str[i] == '+')
+	while (otab[i + 1] != NULL)
+	{
+		tab[i] = ft_strdup(otab[i + 1]);
 		i++;
-	nb = ft_solve_atoi(str, nb, i);
-	if (nb == 0)
-		return (0);
-	else
-		return (nb * a);
+	}
+	tab[i] = NULL;
+	return (tab);
 }

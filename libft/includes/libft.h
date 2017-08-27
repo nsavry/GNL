@@ -6,7 +6,7 @@
 /*   By: nsavry <nsavry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 07:52:25 by nsavry            #+#    #+#             */
-/*   Updated: 2015/08/12 18:10:36 by nsavry           ###   ########.fr       */
+/*   Updated: 2017/08/27 15:29:10 by nsavry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdarg.h>
 
+char				*ft_strndup(char *str, int nb);
 char				**ft_tabdup(char **tab);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *s1, const char *s2);
@@ -91,6 +92,9 @@ int					ft_str_tab_len(char **tab);
 void				ft_put_str_tab(char **tab);
 char				**ft_str_tab_dup(char **tab);
 char				*ft_strsubin(char *str, int i, int j);
-char				*ft_strndup(char *str, int n);
+void				ft_free_tab(char ***tab);
+void				ft_free(char **str);
+char				**ft_add_strtab(char **otab, char *str);
+char				**ft_remove_index_strtab(char **otab, int i);
 
 #endif

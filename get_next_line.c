@@ -6,7 +6,7 @@
 /*   By: nsavry <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/26 17:39:15 by nsavry            #+#    #+#             */
-/*   Updated: 2017/08/26 18:45:23 by nsavry           ###   ########.fr       */
+/*   Updated: 2017/08/27 15:38:37 by nsavry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_join(char **str, char *buf)
 
 	if (*str == NULL)
 		*str = ft_strdup(buf);
-	else	
+	else
 	{
 		tmp = *str;
 		*str = ft_strjoin(tmp, buf);

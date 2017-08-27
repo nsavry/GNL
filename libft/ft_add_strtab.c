@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsavry <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nsavry <nsavry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/27 15:29:52 by nsavry            #+#    #+#             */
-/*   Updated: 2017/08/27 15:29:53 by nsavry           ###   ########.fr       */
+/*   Created: 2013/11/19 12:58:24 by nsavry            #+#    #+#             */
+/*   Updated: 2014/04/26 14:06:14 by nsavry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strndup(char *str, int n)
+char	**ft_add_strtab(char **otab, char *str)
 {
 	int		i;
-	char	*new;
+	char	**tab;
 
 	i = 0;
-	new = malloc(sizeof(char) * (n + 1));
+	while (otab[i] != NULL)
+		i++;
+	tab = malloc(sizeof(char *) * (i + 2));
 	i = 0;
-	while (i < n)
+	while (otab[i] != NULL)
 	{
-		new[i] = str[i];
+		tab[i] = ft_strdup(otab[i]);
 		i++;
 	}
-	new[n] = 0;
-	return (new);
+	tab[i] = ft_strdup(str);
+	tab[i + 1] = NULL;
+	return (tab);
 }
